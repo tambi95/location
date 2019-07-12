@@ -26,12 +26,8 @@
 //   - Conformité W3C par ajout de <li>...</li> sur les variables
 //     $aliasContents et $projectContents si vides
 
-<<<<<<< HEAD
 
-//[modif oto] - Pour supprimer niveau localhost dans les url
-=======
 //[modif oto] - Pour supprimer niveau localhost dans les url 
->>>>>>> parent of c8d235f... Update index.php
 $suppress_localhost = true;
 part95
 part95140
