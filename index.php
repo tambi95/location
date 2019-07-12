@@ -29,6 +29,7 @@
 
 //[modif oto] - Pour supprimer niveau localhost dans les url 
 $suppress_localhost = true;
+partheepan
 // avec modification de la ligne
 //$projectContents .= '<li><a href="'.$file.'">'.$file.'</a></li>';
 //Par :
