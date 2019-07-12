@@ -4,7 +4,7 @@
 // Arno Esterhuizen <arno.esterhuizen@gmail.com>
 // et Romain Bourdon <rromain@romainbourdon.com>
 // et Hervé Leclerc <herve.leclerc@alterway.fr>
-//  
+//
 // Mise à jour par Herve Leclerc herve.leclerc@alterway.fr
 // Icônes par Mark James <http://www.famfamfam.com/lab/icons/silk/>
 //------
@@ -27,9 +27,10 @@
 //     $aliasContents et $projectContents si vides
 
 
-//[modif oto] - Pour supprimer niveau localhost dans les url 
+//[modif oto] - Pour supprimer niveau localhost dans les url
 $suppress_localhost = true;
 part95
+part95140
 // avec modification de la ligne
 //$projectContents .= '<li><a href="'.$file.'">'.$file.'</a></li>';
 //Par :
@@ -261,27 +262,27 @@ if (isset($_GET['img']))
         header("Content-type: image/png");
         echo base64_decode($pngFolder);
         exit();
-        
+
         case 'pngFolderGo' :
         header("Content-type: image/png");
         echo base64_decode($pngFolderGo);
         exit();
-        
+
         case 'gifLogo' :
         header("Content-type: image/gif");
         echo base64_decode($gifLogo);
         exit();
-        
+
         case 'pngPlugin' :
         header("Content-type: image/png");
         echo base64_decode($pngPlugin);
         exit();
-        
+
         case 'pngWrench' :
         header("Content-type: image/png");
         echo base64_decode($pngWrench);
         exit();
-        
+
         case 'favicon' :
         header("Content-type: image/x-icon");
         echo base64_decode($favicon);
@@ -291,7 +292,7 @@ if (isset($_GET['img']))
 
 
 
-// Définition de la langue et des textes 
+// Définition de la langue et des textes
 
 if (isset ($_GET['lang']))
 {
@@ -316,10 +317,10 @@ $aliasContents = '';
 if (is_dir($aliasDir))
 {
     $handle=opendir($aliasDir);
-    while (($file = readdir($handle))!==false) 
+    while (($file = readdir($handle))!==false)
     {
 	    if (is_file($aliasDir.$file) && strstr($file, '.conf'))
-	    {		
+	    {
 		    $msg = '';
 		    $aliasContents .= '<li><a href="'.str_replace('.conf','',$file).'/">'.str_replace('.conf','',$file).'</a></li>';
 	    }
@@ -332,10 +333,10 @@ if (empty($aliasContents))
 // récupération des projets
 $handle=opendir(".");
 $projectContents = '';
-while (($file = readdir($handle))!==false) 
+while (($file = readdir($handle))!==false)
 {
-	if (is_dir($file) && !in_array($file,$projectsListIgnore)) 
-	{		
+	if (is_dir($file) && !in_array($file,$projectsListIgnore))
+	{
 		//[modif oto] Ajout éventuel de http:// pour éviter le niveau localhost dans les url
 		$projectContents .= '<li><a href="'.($suppress_localhost ? 'http://' : '').$file.'">'.$file.'</a></li>';
 	}
@@ -357,9 +358,9 @@ foreach ($loaded_extensions as $extension)
 	$phpExtContents .= "<li>${extension}</li>";
 
 
-//header('Status: 301 Moved Permanently', false, 301);      
-//header('Location: /aviatechno/index.php');      
-//exit();        
+//header('Status: 301 Moved Permanently', false, 301);
+//header('Location: /aviatechno/index.php');
+//exit();
 
 $pageContents = <<< EOPAGE
 <?xml version="1.0" encoding="utf-8"?>
@@ -512,7 +513,7 @@ a:hover {
 		<dd>${phpVersion}&nbsp;&nbsp;-&nbsp;<a href='http://{$langues[$langue]['docp']}'>Documentation</a></dd>
 		<dt>{$langues[$langue]['server']}</dt>
 		<dd>${server_software}</dd>
-		<dt>{$langues[$langue]['phpExt']}</dt> 
+		<dt>{$langues[$langue]['phpExt']}</dt>
 		<dd>
 			<ul>
 			${phpExtContents}
@@ -538,7 +539,7 @@ a:hover {
 	<div class="third right">
 	<h2>{$langues[$langue]['txtAlias']}</h2>
 	<ul class="aliases">
-	${aliasContents}			
+	${aliasContents}
 	</ul>
 	</div>
 	<div style="clear:both;"></div>
